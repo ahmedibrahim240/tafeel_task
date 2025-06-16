@@ -6,8 +6,8 @@ platform :android do
     # # Clean and build with environment variables
     sh "flutter clean"
     sh "flutter build apk --release \
-        --build-name=0.1.0 \
-        --build-number=3 \
+        --build-name=0.0.1 \
+        --build-number=1 \
         --no-tree-shake-icons"
     
     # Distribute via Firebase
