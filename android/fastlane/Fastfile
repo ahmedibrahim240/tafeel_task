@@ -17,7 +17,7 @@ platform :android do
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
       groups: "tester",
-      release_notes: "test",
+      release_notes: "test first",
       upload_timeout: 600
     )
   end
