@@ -1,0 +1,24 @@
+default_platform(:android)
+
+platform :android do
+  desc "dev app"
+  lane :android do
+    # # Clean and build with environment variables
+    sh "flutter clean"
+    sh "flutter build apk --release \
+        --build-name=0.1.0 \
+        --build-number=3 \
+        --no-tree-shake-icons"
+    
+    # Distribute via Firebase
+    firebase_app_distribution(
+      app: "1:647298385453:android:62b5f1ded9bd098693daa4",
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
+      android_artifact_type: "APK",
+      android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+      groups: "tester",
+      release_notes: "test",
+      upload_timeout: 600
+    )
+  end
+end
