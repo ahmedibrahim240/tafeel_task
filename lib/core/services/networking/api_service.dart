@@ -13,8 +13,5 @@ abstract class ApiService {
   @GET(ApiConstants.userUrl)
   Future<UserResponseModel> getAllUsers({@Queries() required Map<String, dynamic> queries});
   @GET("${ApiConstants.userUrl}/{userId}")
-  Future<SingelUserResponse> getSingleUsers({
-    @Path() required String userId,
-    @Queries() required Map<String, dynamic> queries,
-  });
+  Future<SingelUserResponse> getSingleUsers({@Path() required String userId});
 }

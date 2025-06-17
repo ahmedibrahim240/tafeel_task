@@ -50,13 +50,9 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<SingelUserResponse> getSingleUsers({
-    required String userId,
-    required Map<String, dynamic> queries,
-  }) async {
+  Future<SingelUserResponse> getSingleUsers({required String userId}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queries);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<SingelUserResponse>(
