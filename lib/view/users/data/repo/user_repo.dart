@@ -20,7 +20,7 @@ class UsersRepo {
     }
   }
 
-  Future<ApiResult<UserModel?>> orderSearch({required String userId}) async {
+  Future<ApiResult<UserModel?>> getSingleUsers({required String userId}) async {
     try {
       final response = await _apiService.getSingleUsers(userId: userId);
       return ApiResult.success(response.data);

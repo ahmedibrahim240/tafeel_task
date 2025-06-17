@@ -4,6 +4,7 @@ import 'package:tafeel_task/core/widget/cached_network_image.dart';
 import 'package:tafeel_task/core/widget/paginations/ui/pagination_builder.dart';
 import 'package:tafeel_task/view/users/data/models/user_models.dart';
 import 'package:tafeel_task/view/users/logic/all_user_cubit.dart';
+import 'package:tafeel_task/view/users/ui/user_details_page.dart';
 
 class UsersPage extends StatelessWidget {
   const UsersPage({super.key});
@@ -19,6 +20,9 @@ class UsersPage extends StatelessWidget {
             itemBuilder: (_, user, index) {
               return ListTile(
                 contentPadding: EdgeInsets.all(16),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => UserDetailsPage(userId: user.id)));
+                },
                 title: Text(user.fullName),
                 subtitle: Text(user.email),
                 leading: CircleAvatar(radius: 25, child: CustomCachedNetworkImage(url: user.avatar)),
